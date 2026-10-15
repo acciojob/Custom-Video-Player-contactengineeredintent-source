@@ -3,25 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML Video Player</title>
+	<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-   <div class="player">
-     <video class="player__video viewer" src="download.mp4"></video>
-
-     <div class="player__controls">
-       <div class="progress">
-        <div class="progress__filled"></div>
-       </div>
-       <button class="player__button toggle" title="Toggle Play">►</button>
-       <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
-       <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
-       <button data-skip="-10" class="player__button">« 10s</button>
-       <button data-skip="25" class="player__button">25s »</button>
-     </div>
-   </div>
-
+<body class="d-flex min-vh-100 align-items-center justify-content-center">
+    <div
+      class="video-container d-flex flex-column align-items-center justify-content-center"
+    >
+      <video
+        id="myVideo"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+      ></video>
+      <div
+        class="overlay d-flex flex-column align-items-center justify-content-between"
+      >
+        <progress
+          id="progressTab"
+          value="0"
+          min="0"
+          max="100"
+          class="w-100"
+        ></progress>
+        <div class="d-flex flex-wrap w-100 justify-content-between align-items-center">
+          <button id="playPauseBtn" class="btn">▶</button>
+          <input type="range" id="volumeInput" min="0" max="100" value="0" />
+          <input
+            type="range"
+            id="playbackSpeed"
+            min="0.5"
+            max="2"
+            step=".25"
+            value="1"
+          />
+          <button id="rewind" class="btn text-white"><h4><<10s</h4></button>
+          <button id="forward" class="btn text-white"><h4>25s>></h4></button>
+        </div>
+      </div>
+    </div>
+  </body>
   <script src="./scripts.js"></script>
-</body>
+	<script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+    crossorigin="anonymous"
+  ></script>
 </html>
