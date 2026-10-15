@@ -22,13 +22,15 @@
       <div
         class="overlay d-flex flex-column align-items-center justify-content-between"
       >
-        <progress
+        <input
           id="progressTab"
+          type="range"
           value="0"
           min="0"
           max="100"
           class="w-100"
-        ></progress>
+          step="1"
+        ></input>
         <div class="d-flex flex-wrap w-100 justify-content-between align-items-center">
           <button id="playPauseBtn" class="btn">▶</button>
           <input type="range" id="volumeInput" min="0" max="100" value="0" />
